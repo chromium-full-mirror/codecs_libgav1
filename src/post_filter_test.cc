@@ -851,8 +851,8 @@ class PostFilterApplyCdefTest : public testing::TestWithParam<FrameSizeParam>,
   FrameSizeParam param_ = GetParam();
   Pixel dest_[kMaxTestFrameSize * kMaxPlanes];
   const size_t y_size_ = param_.width * param_.height;
-  const size_t uv_size_ = y_size_ >>
-                          (param_.subsampling_x + param_.subsampling_y);
+  const size_t uv_size_ =
+      y_size_ >> (param_.subsampling_x + param_.subsampling_y);
   const size_t size_ = y_size_ + uv_size_ * 2;
 };
 
